@@ -13,10 +13,15 @@ public class ProjectTaskService {
 
     public ProjectTask saveOrUpdateProjectTask(ProjectTask projectTask){
 
-        if(projectTask)
-        {}
+        if(projectTask.getStatus()==null || projectTask.getStatus()=="") {
+            projectTask.setStatus("TO_DO");
+        }
 
         return projectTaskRepository.save(projectTask);
+    }
+
+    public Iterable<ProjectTask> findAll(){
+        return projectTaskRepository.findAll();
     }
 
 
