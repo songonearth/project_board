@@ -26,7 +26,7 @@ public class ProjectTask {
         return Id;
     }
 
-    public void setId(Long id) {
+    public void setById(Long id) {
         Id = id;
     }
 

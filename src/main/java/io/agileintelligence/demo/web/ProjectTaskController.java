@@ -44,4 +44,10 @@ public class ProjectTaskController {
         return projectTaskService.findAll();
     }
 
+    @GetMapping("/{pt_id}")
+    public ResponseEntity<?> getPTById(@PathVariable Long pt_id){
+        ProjectTask projectTask = projectTaskService.findbyId(pt_id);
+        return new ResponseEntity<ProjectTask>(projectTask, HttpStatus.OK);
+    }
+
 }
