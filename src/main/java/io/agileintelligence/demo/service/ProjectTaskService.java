@@ -5,6 +5,8 @@ import io.agileintelligence.demo.repository.ProjectTaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class ProjectTaskService {
 
@@ -24,8 +26,8 @@ public class ProjectTaskService {
         return projectTaskRepository.findAll();
     }
 
-    public ProjectTask findbyId(Long id){
-        return projectTaskRepository.getById(id);
+    public Optional<ProjectTask> findById(Long id){
+        return projectTaskRepository.findById(id);
     }
 
 

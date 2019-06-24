@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("api/board")
@@ -46,8 +47,8 @@ public class ProjectTaskController {
 
     @GetMapping("/{pt_id}")
     public ResponseEntity<?> getPTById(@PathVariable Long pt_id){
-        ProjectTask projectTask = projectTaskService.findbyId(pt_id);
-        return new ResponseEntity<ProjectTask>(projectTask, HttpStatus.OK);
+        Optional<ProjectTask> projectTask = projectTaskService.findById(pt_id);
+        return new ResponseEntity<Optional>(projectTask, HttpStatus.OK);
     }
 
 }
